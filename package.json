@@ -2,10 +2,11 @@
   "name": "mohamed-portfolio",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
+  "scripts": {    
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "deploy": "gh-pages -d out"
   },
   "dependencies": {
     "framer-motion": "latest",
@@ -16,6 +17,7 @@
   "devDependencies": {
     "@tailwindcss/postcss": "latest",
     "autoprefixer": "latest",
+    "gh-pages": "^6.3.0",
     "postcss": "latest",
     "tailwindcss": "latest"
   }
