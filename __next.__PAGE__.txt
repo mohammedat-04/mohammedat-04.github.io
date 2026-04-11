@@ -1,0 +1,12 @@
+1:"$Sreact.fragment"
+2:I[95865,["/Mohamed-Atef-Helali/_next/static/chunks/029gsvb.erm5v.js","/Mohamed-Atef-Helali/_next/static/chunks/0d3tkj33oycf2.js","/Mohamed-Atef-Helali/_next/static/chunks/0y~zuw1irs.ip.js"],"default"]
+3:I[13826,["/Mohamed-Atef-Helali/_next/static/chunks/029gsvb.erm5v.js","/Mohamed-Atef-Helali/_next/static/chunks/0d3tkj33oycf2.js","/Mohamed-Atef-Helali/_next/static/chunks/0y~zuw1irs.ip.js"],"default"]
+4:I[45085,["/Mohamed-Atef-Helali/_next/static/chunks/029gsvb.erm5v.js","/Mohamed-Atef-Helali/_next/static/chunks/0d3tkj33oycf2.js","/Mohamed-Atef-Helali/_next/static/chunks/0y~zuw1irs.ip.js"],"default"]
+5:I[3804,["/Mohamed-Atef-Helali/_next/static/chunks/029gsvb.erm5v.js","/Mohamed-Atef-Helali/_next/static/chunks/0d3tkj33oycf2.js","/Mohamed-Atef-Helali/_next/static/chunks/0y~zuw1irs.ip.js"],"default"]
+6:I[18388,["/Mohamed-Atef-Helali/_next/static/chunks/029gsvb.erm5v.js","/Mohamed-Atef-Helali/_next/static/chunks/0d3tkj33oycf2.js","/Mohamed-Atef-Helali/_next/static/chunks/0y~zuw1irs.ip.js"],"default"]
+7:I[44867,["/Mohamed-Atef-Helali/_next/static/chunks/029gsvb.erm5v.js","/Mohamed-Atef-Helali/_next/static/chunks/0d3tkj33oycf2.js","/Mohamed-Atef-Helali/_next/static/chunks/0y~zuw1irs.ip.js"],"default"]
+8:I[45930,["/Mohamed-Atef-Helali/_next/static/chunks/029gsvb.erm5v.js","/Mohamed-Atef-Helali/_next/static/chunks/0d3tkj33oycf2.js","/Mohamed-Atef-Helali/_next/static/chunks/0y~zuw1irs.ip.js"],"default"]
+9:I[97367,["/Mohamed-Atef-Helali/_next/static/chunks/029gsvb.erm5v.js","/Mohamed-Atef-Helali/_next/static/chunks/0d3tkj33oycf2.js"],"OutletBoundary"]
+a:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"app-shell min-h-screen overflow-x-hidden pb-10","children":[["$","$L2",null,{}],["$","$L3",null,{}],["$","div",null,{"className":"mx-auto w-full max-w-7xl px-4 pb-10 pt-6 sm:px-6 lg:px-8","children":["$","div",null,{"className":"grid gap-8 xl:grid-cols-[minmax(300px,390px)_minmax(0,1fr)]","children":[["$","$L4",null,{}],["$","div",null,{"className":"space-y-8","children":[["$","$L5",null,{}],["$","$L6",null,{}],["$","$L7",null,{}],["$","$L8",null,{}]]}]]}]}]]}],[["$","script","script-0",{"src":"/Mohamed-Atef-Helali/_next/static/chunks/0y~zuw1irs.ip.js","async":true}]],["$","$L9",null,{"children":["$","$a",null,{"name":"Next.MetadataOutlet","children":"$@b"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"h-Uc_bCaid20eOQPgzNEg"}
+b:null
