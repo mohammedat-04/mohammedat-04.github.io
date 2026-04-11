@@ -1,0 +1,65 @@
+<app-section-shell
+  sectionId="contact"
+  eyebrow="Contact"
+  title="Let’s build something useful, ambitious, and well executed."
+  [lead]="copy.lead"
+>
+  <div class="contact-grid">
+    <article class="contact-panel glass-card" appTilt appReveal [revealDelay]="80">
+      <span class="contact-panel__label">Direct Channels</span>
+      <p>{{ copy.note }}</p>
+
+      <div class="contact-panel__links">
+        @for (link of socialLinks; track link.label) {
+          <a class="contact-link" [href]="link.href" target="_blank" rel="noreferrer noopener">
+            <strong>{{ link.label }}</strong>
+            <span>{{ link.caption }}</span>
+          </a>
+        }
+      </div>
+    </article>
+
+    <form class="contact-form glass-card" [formGroup]="form" (ngSubmit)="submit()" appReveal [revealDelay]="160" novalidate>
+      <div class="contact-form__row">
+        <label class="field">
+          <span>Name</span>
+          <input type="text" formControlName="name" [class.field__input--error]="hasError('name')" placeholder="Your name" />
+        </label>
+
+        <label class="field">
+          <span>Email</span>
+          <input type="email" formControlName="email" [class.field__input--error]="hasError('email')" placeholder="you@example.com" />
+        </label>
+      </div>
+
+      <label class="field">
+        <span>Subject</span>
+        <input type="text" formControlName="subject" [class.field__input--error]="hasError('subject')" placeholder="Project, internship, collaboration..." />
+      </label>
+
+      <label class="field">
+        <span>Message</span>
+        <textarea
+          rows="6"
+          formControlName="message"
+          [class.field__input--error]="hasError('message')"
+          placeholder="Tell me a bit about your idea or opportunity."
+        ></textarea>
+      </label>
+
+      <div class="contact-form__feedback">
+        @if (successMessage()) {
+          <p class="status-message status-message--success">{{ successMessage() }}</p>
+        }
+
+        @if (errorMessage()) {
+          <p class="status-message status-message--error">{{ errorMessage() }}</p>
+        }
+      </div>
+
+      <button type="submit" class="btn btn--primary" [disabled]="submitting()" appRipple>
+        {{ submitting() ? 'Sending...' : 'Send Message' }}
+      </button>
+    </form>
+  </div>
+</app-section-shell>

@@ -1,0 +1,40 @@
+<app-section-shell
+  sectionId="projects"
+  eyebrow="Projects"
+  title="Selected work across robotics concepts, embedded builds, and polished software interfaces."
+  lead="Each project is framed to show more than technology choice. The real goal is thoughtful execution, clear outcomes, and a direction that supports future work in ML and robotics engineering."
+>
+  <div class="projects-grid">
+    @for (project of projects; track project.title) {
+      <article class="project-card glass-card" appTilt appReveal [revealDelay]="70 + ($index * 70)">
+        <div class="project-card__top">
+          <span class="project-card__year">{{ project.year }}</span>
+          <h3>{{ project.title }}</h3>
+        </div>
+
+        <p class="project-card__summary">{{ project.summary }}</p>
+        <p class="project-card__outcome">{{ project.outcome }}</p>
+
+        <div class="project-card__stack">
+          @for (tech of project.techStack; track tech) {
+            <span class="chip">{{ tech }}</span>
+          }
+        </div>
+
+        <div class="project-card__actions">
+          @if (project.demoUrl) {
+            <button type="button" class="btn btn--secondary" (click)="openLink(project, 'demo')" appRipple>
+              View Demo
+            </button>
+          }
+
+          @if (project.sourceUrl) {
+            <button type="button" class="btn btn--ghost" (click)="openLink(project, 'source')" appRipple>
+              Source
+            </button>
+          }
+        </div>
+      </article>
+    }
+  </div>
+</app-section-shell>

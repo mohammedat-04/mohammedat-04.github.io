@@ -1,0 +1,34 @@
+.footer {
+  padding: 2rem 1rem 3rem;
+}
+
+.footer__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  color: rgba(188, 204, 241, 0.72);
+  font-size: 0.9rem;
+}
+
+.footer__inner p {
+  margin: 0;
+  font-weight: 700;
+}
+
+.footer__inner span {
+  text-align: right;
+}
+
+@media (max-width: 640px) {
+  .footer__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer__inner span {
+    text-align: left;
+  }
+}

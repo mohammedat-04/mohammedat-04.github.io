@@ -1,0 +1,46 @@
+:host {
+  display: block;
+}
+
+.portfolio-shell {
+  position: relative;
+  min-height: 100vh;
+  overflow: clip;
+}
+
+.portfolio-main {
+  position: relative;
+  z-index: 1;
+  width: min(1180px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.portfolio-stack {
+  display: grid;
+  gap: 5rem;
+  padding: 3rem 0 4rem;
+}
+
+.ambient {
+  position: fixed;
+  inset: auto;
+  width: 32rem;
+  height: 32rem;
+  border-radius: 999px;
+  filter: blur(70px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.55;
+}
+
+.ambient--one {
+  top: 8rem;
+  right: -10rem;
+  background: rgba(71, 102, 255, 0.22);
+}
+
+.ambient--two {
+  left: -12rem;
+  bottom: 10rem;
+  background: rgba(76, 221, 255, 0.14);
+}

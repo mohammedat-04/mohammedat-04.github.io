@@ -1,0 +1,30 @@
+<app-section-shell
+  sectionId="about"
+  eyebrow="About Me"
+  title="I like building systems that feel intelligent, dependable, and carefully engineered."
+  lead="My interests sit where programming, robotics, machine learning, and embedded systems meet. I enjoy turning technical ideas into products that are both functional and refined."
+>
+  <div class="about-grid">
+    <article class="about-card glass-card" appTilt appReveal [revealDelay]="80">
+      <span class="about-card__label">Professional Bio</span>
+      <p>
+        I am a computer engineering student focused on the long path toward ML and robotics engineering. I care
+        about strong technical foundations, modern software craft, and creating systems that can move from concept
+        to practical use.
+      </p>
+      <p>
+        Whether I am building an embedded prototype, a robotics workflow, or a polished frontend, I aim for clean
+        execution, clear structure, and a professional result.
+      </p>
+    </article>
+
+    <div class="about-list">
+      @for (highlight of highlights; track highlight) {
+        <article class="about-list__item glass-card" appReveal [revealDelay]="120 + ($index * 80)">
+          <span>{{ $index + 1 }}</span>
+          <p>{{ highlight }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</app-section-shell>

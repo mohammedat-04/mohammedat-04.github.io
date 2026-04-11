@@ -1,0 +1,30 @@
+<app-section-shell
+  sectionId="experience"
+  eyebrow="Education & Experience"
+  title="A timeline shaped by software craft, engineering curiosity, and steady movement toward robotics."
+  lead="I am still early in the journey, so I designed this section to show trajectory clearly: academic grounding, practical support work, and independent building."
+>
+  <div class="timeline">
+    @for (entry of experiences; track entry.title) {
+      <article class="timeline__entry glass-card" appTilt appReveal [revealDelay]="80 + ($index * 80)">
+        <span class="timeline__dot"></span>
+        <div class="timeline__meta">
+          <span>{{ entry.period }}</span>
+          <strong>{{ entry.location }}</strong>
+        </div>
+
+        <div class="timeline__copy">
+          <h3>{{ entry.title }}</h3>
+          <p class="timeline__organization">{{ entry.organization }}</p>
+          <p class="timeline__summary">{{ entry.summary }}</p>
+
+          <div class="timeline__highlights">
+            @for (highlight of entry.highlights; track highlight) {
+              <p>{{ highlight }}</p>
+            }
+          </div>
+        </div>
+      </article>
+    }
+  </div>
+</app-section-shell>

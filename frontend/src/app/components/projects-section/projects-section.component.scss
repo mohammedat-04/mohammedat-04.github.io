@@ -1,0 +1,59 @@
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.project-card {
+  display: grid;
+  gap: 1rem;
+  padding: 1.45rem;
+}
+
+.project-card__top {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.project-card__year {
+  color: rgba(191, 208, 255, 0.74);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.project-card h3 {
+  margin: 0;
+  font-size: 1.34rem;
+}
+
+.project-card__summary,
+.project-card__outcome {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
+.project-card__outcome {
+  color: rgba(233, 240, 255, 0.78);
+}
+
+.project-card__stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.project-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.3rem;
+}
+
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}

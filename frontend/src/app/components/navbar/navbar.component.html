@@ -1,0 +1,29 @@
+<header class="navbar" [class.navbar--compact]="compactMode()">
+  <div class="navbar__inner glass-card">
+    <button type="button" class="navbar__brand" (click)="scrollToSection('hero')" appRipple>
+      <span class="navbar__brand-mark">M</span>
+      <span class="navbar__brand-copy">
+        <strong>Mohamed</strong>
+        <small>ML • Robotics • Embedded</small>
+      </span>
+    </button>
+
+    <nav class="navbar__links" aria-label="Section Navigation">
+      @for (section of sections(); track section.id) {
+        <button
+          type="button"
+          class="navbar__link"
+          [class.is-active]="activeSection() === section.id"
+          (click)="scrollToSection(section.id)"
+          appRipple
+        >
+          {{ section.label }}
+        </button>
+      }
+    </nav>
+
+    <button type="button" class="btn btn--secondary navbar__cta" (click)="scrollToSection('contact')" appRipple>
+      Contact Me
+    </button>
+  </div>
+</header>

@@ -1,0 +1,54 @@
+<section id="hero" class="hero">
+  <div class="hero__copy" appReveal>
+    <span class="status-pill">{{ hero.availability }}</span>
+    <p class="section-kicker">Computer Engineering · Robotics · Machine Learning</p>
+    <h1>{{ hero.name }}</h1>
+    <p class="hero__title">{{ hero.title }}</p>
+    <p class="hero__intro">{{ hero.intro }}</p>
+
+    <div class="hero__actions">
+      <button type="button" class="btn btn--primary" (click)="scrollToSection('projects')" appRipple>
+        View Projects
+      </button>
+      <button type="button" class="btn btn--secondary" (click)="scrollToSection('contact')" appRipple>
+        Contact Me
+      </button>
+    </div>
+
+    <div class="hero__traits">
+      @for (trait of hero.traits; track trait) {
+        <span class="chip">{{ trait }}</span>
+      }
+    </div>
+  </div>
+
+  <div class="hero__visual">
+    <article class="hero__panel glass-card" appTilt appRipple appReveal [revealDelay]="120">
+      <div class="hero__panel-head">
+        <span class="hero__panel-badge">Focus Layer</span>
+        <strong>Engineering interface meets intelligent systems</strong>
+      </div>
+
+      <p class="hero__panel-copy">{{ hero.focus }}</p>
+
+      <div class="hero__metrics">
+        @for (metric of metrics; track metric.label) {
+          <div class="hero__metric">
+            <strong>{{ metric.value }}</strong>
+            <span>{{ metric.label }}</span>
+          </div>
+        }
+      </div>
+    </article>
+
+    <article class="hero__floating hero__floating--top glass-card" appReveal [revealDelay]="220">
+      <span>Now Building</span>
+      <strong>Interactive robotics-ready software concepts</strong>
+    </article>
+
+    <article class="hero__floating hero__floating--bottom glass-card" appReveal [revealDelay]="320">
+      <span>Design Principle</span>
+      <strong>Precise motion, clear systems, premium presentation</strong>
+    </article>
+  </div>
+</section>

@@ -1,0 +1,13 @@
+<section class="section-shell" [attr.id]="sectionId()" appReveal>
+  <div class="section-shell__header">
+    <span class="section-shell__eyebrow">{{ eyebrow() }}</span>
+    <h2>{{ title() }}</h2>
+    @if (lead()) {
+      <p>{{ lead() }}</p>
+    }
+  </div>
+
+  <div class="section-shell__content">
+    <ng-content></ng-content>
+  </div>
+</section>

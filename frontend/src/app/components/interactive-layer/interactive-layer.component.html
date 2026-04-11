@@ -1,0 +1,27 @@
+@if (enabled()) {
+  <div class="interactive-layer" [class.interactive-layer--visible]="pointerVisible()">
+    <div class="interactive-layer__spotlight"></div>
+    <div
+      class="interactive-layer__cursor interactive-layer__cursor--ring"
+      [style.transform]="'translate3d(' + (pointer().x - 20) + 'px, ' + (pointer().y - 20) + 'px, 0)'"
+    ></div>
+    <div
+      class="interactive-layer__cursor interactive-layer__cursor--dot"
+      [style.transform]="'translate3d(' + (pointer().x - 4) + 'px, ' + (pointer().y - 4) + 'px, 0)'"
+    ></div>
+
+    @for (burst of bursts(); track burst.id) {
+      <div class="interactive-layer__burst" [style.left.px]="burst.x" [style.top.px]="burst.y">
+        <span class="interactive-layer__pulse"></span>
+        @for (particle of burst.particles; track $index) {
+          <span
+            class="interactive-layer__particle"
+            [style.--particle-angle]="particle.angle + 'deg'"
+            [style.--particle-distance]="particle.distance + 'px'"
+            [style.--particle-delay]="particle.delay + 'ms'"
+          ></span>
+        }
+      </div>
+    }
+  </div>
+}

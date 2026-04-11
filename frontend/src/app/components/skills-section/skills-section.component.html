@@ -1,0 +1,32 @@
+<app-section-shell
+  sectionId="skills"
+  eyebrow="Skills"
+  title="A balanced stack across frontend systems, backend APIs, embedded logic, and robotics workflows."
+  lead="I value versatility, but I want that versatility to remain disciplined. These strengths reflect the areas I actively develop and connect together in projects."
+>
+  <div class="skills-grid">
+    @for (skill of skills; track skill.name) {
+      <article class="skill-card glass-card" appTilt appReveal [revealDelay]="60 + ($index * 55)">
+        <div class="skill-card__top">
+          <span class="skill-card__icon">{{ skill.short }}</span>
+          <div class="skill-card__copy">
+            <span class="skill-card__category">{{ skill.category }}</span>
+            <h3>{{ skill.name }}</h3>
+          </div>
+        </div>
+
+        <p>{{ skill.summary }}</p>
+
+        <div class="skill-card__meter">
+          <div class="skill-card__meter-label">
+            <span>Proficiency</span>
+            <strong>{{ skill.level }}%</strong>
+          </div>
+          <div class="skill-card__bar">
+            <span [style.width.%]="skill.level"></span>
+          </div>
+        </div>
+      </article>
+    }
+  </div>
+</app-section-shell>
