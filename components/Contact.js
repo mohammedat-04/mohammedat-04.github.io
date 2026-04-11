@@ -11,7 +11,7 @@ export default function Contact() {
     <section id="contact" className="pb-10">
       <motion.div
         className="section-shell contact-shell px-6 py-8 sm:px-10 sm:py-10"
-        initial={{ opacity: 0, y: 32 }}
+        initial={false}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.35 }}
         transition={{ duration: reduceMotion ? 0 : 0.55, ease: "easeOut" }}
@@ -39,7 +39,7 @@ export default function Contact() {
             <motion.article
               key={note.title}
               className="info-card p-5"
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
               transition={{
