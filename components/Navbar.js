@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { withBasePath } from "@/components/assetPath";
 import { motion } from "framer-motion";
 import LanguageToggle from "@/components/LanguageToggle";
 import { useLanguage } from "@/components/LanguageProvider";
@@ -25,7 +26,7 @@ export default function Navbar() {
           className="brand-mark focus-ring inline-flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.24em] sm:text-base"
         >
           <Image
-            src="/brand-icon.svg"
+            src={withBasePath("/brand-icon.svg")}
             alt=""
             width={28}
             height={28}

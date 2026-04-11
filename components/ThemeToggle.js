@@ -1,7 +1,7 @@
 "use client";
 
 import { useLanguage } from "@/components/LanguageProvider";
-import { defaultLightTheme, themeOptions } from "@/components/themeOptions";
+import { themeOptions } from "@/components/themeOptions";
 
 export default function ThemeToggle() {
   const { siteData } = useLanguage();
@@ -15,13 +15,13 @@ export default function ThemeToggle() {
       <span
         aria-hidden="true"
         className="theme-swatch theme-swatch-large"
+        suppressHydrationWarning
         data-theme-swatch
-        data-theme-preview={defaultLightTheme}
       />
       <span className="hidden sm:inline">{siteData.themeControl.buttonPrefix}</span>
       <div className="theme-select-wrap">
         <select
-          defaultValue={defaultLightTheme}
+          suppressHydrationWarning
           data-theme-select
           className="theme-select"
           aria-label={siteData.themeControl.chooseLabel}

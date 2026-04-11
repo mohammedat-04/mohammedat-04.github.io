@@ -1,48 +1,34 @@
-# Portfolio Workspace
+# Atef Helali Portfolio
 
-The active portfolio is the Next.js site in the repository root.
-
-## Main Site
+## Local
 
 ```bash
 npm install
 npm run dev
 ```
 
-The main portfolio runs on `http://localhost:3000`.
-
-### Build
+## Static Export
 
 ```bash
 npm run build
 ```
 
-## Theme Support
+The static site is generated in `out/`.
 
-The root portfolio now uses a simplified two-mode theme system:
+## GitHub Pages
 
-- `Light`
-- `Dark`
+This repo now includes a Pages workflow in `.github/workflows/pages.yml` that builds the Next.js app as a static export and deploys `out/`.
 
-The selected mode is saved in `localStorage`, and old stored theme values are automatically mapped to the new light/dark system.
+Important:
 
-## Content
+- The current remote repository is `mohammedat-04/Mohamed-Atef-Helali`.
+- That repository will publish as a project page, not the root user site.
+- The exact URL `https://mohammedat-04.github.io` only works if the repository name is `mohammedat-04.github.io`, or if you deploy this code from a separate repo with that exact name.
 
-Update the portfolio text and links here:
+If you keep the current repo name, the GitHub Pages URL will be:
 
-- `components/siteData.js`
+```text
+https://mohammedat-04.github.io/Mohamed-Atef-Helali/
+```
 
-Theme logic lives here:
-
-- `components/ThemeToggle.js`
-- `components/themeOptions.js`
-- `app/globals.css`
-
-## Secondary Stack
-
-The separate Angular + Express setup still exists in:
-
-- `frontend/`
-- `backend/`
-
-It is not used by the main Next.js portfolio.
+If you want the root URL instead, rename the repo to `mohammedat-04.github.io` or push this project into a new repo with that exact name.

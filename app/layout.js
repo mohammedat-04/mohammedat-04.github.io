@@ -1,5 +1,6 @@
 import { Fraunces, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import Script from "next/script";
+import { withBasePath } from "@/components/assetPath";
 import LanguageProvider from "@/components/LanguageProvider";
 import {
   defaultDarkTheme,
@@ -33,8 +34,8 @@ export const metadata = {
   description:
     "Portfolio website for Atef Helali, focused on software, robotics, machine learning, and embedded systems.",
   icons: {
-    icon: "/brand-icon.svg",
-    shortcut: "/brand-icon.svg"
+    icon: withBasePath("/brand-icon.svg"),
+    shortcut: withBasePath("/brand-icon.svg")
   }
 };
 
