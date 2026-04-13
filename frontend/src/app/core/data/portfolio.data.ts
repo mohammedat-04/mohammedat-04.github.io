@@ -243,7 +243,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
   {
     label: 'LinkedIn',
     caption: 'Professional profile and networking',
-    href: 'https://www.linkedin.com/in/atef-helali-6b9568283/'
+    href: 'https://www.linkedin.com/in/mohamed-atef-helali-6b9568283/'
   },
   {
     label: 'Email',

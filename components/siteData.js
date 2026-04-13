@@ -23,8 +23,8 @@ export const languageOptions = [
 export const validLanguages = languageOptions.map((language) => language.id);
 
 const sharedLinks = {
-  linkedin: "https://www.linkedin.com/in/atef-helali-6b9568283/",
-  email: "mohamed@example.com"
+  linkedin: "https://www.linkedin.com/in/mohamed-atef-helali-6b9568283/",
+  email: "helalimohamedatef@gmail.com"
 };
 
 const siteContent = {
@@ -386,7 +386,7 @@ const siteContent = {
         },
         {
           title: "LinkedIn",
-          value: "linkedin.com/in/atef-helali-6b9568283/",
+          value: "linkedin.com/in/mohamed-atef-helali-6b9568283/",
           href: sharedLinks.linkedin
         }
       ]
@@ -791,7 +791,7 @@ const siteContent = {
         },
         {
           title: "LinkedIn",
-          value: "linkedin.com/in/atef-helali-6b9568283/",
+          value: "linkedin.com/in/mohamed-atef-helali-6b9568283/",
           href: sharedLinks.linkedin
         }
       ]
@@ -1196,7 +1196,7 @@ const siteContent = {
         },
         {
           title: "LinkedIn",
-          value: "linkedin.com/in/atef-helali-6b9568283/",
+          value: "linkedin.com/in/mohamed-atef-helali-6b9568283/",
           href: sharedLinks.linkedin
         }
       ]
