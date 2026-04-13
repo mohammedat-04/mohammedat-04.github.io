@@ -492,30 +492,44 @@ button {
   outline-offset: 3px;
 }
 
-.theme-select-wrap {
+.theme-toggle-select {
   position: relative;
-  min-width: 5.9rem;
+  min-width: 12rem;
+}
+
+.theme-prefix,
+.theme-current-label,
+.theme-select-caret,
+.theme-swatch {
+  pointer-events: none;
+}
+
+.theme-current-label {
+  min-width: 4.8rem;
+  padding-right: 1rem;
+  color: var(--foreground);
 }
 
 .theme-select {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
   width: 100%;
+  height: 100%;
   appearance: none;
+  -webkit-appearance: none;
   border: 0;
   background: transparent;
   color: var(--foreground);
   font: inherit;
-  line-height: 1.1;
-  padding: 0 1.15rem 0 0;
+  line-height: 1;
+  padding: 0;
   cursor: pointer;
   outline: none;
+  opacity: 0;
 }
 
 .theme-select-caret {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  pointer-events: none;
   color: var(--muted);
   font-size: 0.72rem;
 }

@@ -386,7 +386,7 @@ const siteContent = {
         },
         {
           title: "LinkedIn",
-          value: "linkedin.com/in/atef-helali-6b9568283",
+          value: "linkedin.com/in/atef-helali-6b9568283/",
           href: sharedLinks.linkedin
         }
       ]
@@ -791,7 +791,7 @@ const siteContent = {
         },
         {
           title: "LinkedIn",
-          value: "linkedin.com/in/atef-helali-6b9568283",
+          value: "linkedin.com/in/atef-helali-6b9568283/",
           href: sharedLinks.linkedin
         }
       ]
@@ -1196,7 +1196,7 @@ const siteContent = {
         },
         {
           title: "LinkedIn",
-          value: "linkedin.com/in/atef-helali-6b9568283",
+          value: "linkedin.com/in/atef-helali-6b9568283/",
           href: sharedLinks.linkedin
         }
       ]
