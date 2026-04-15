@@ -37,6 +37,14 @@ function getYouTubeEmbedUrl(source) {
 export default function Projects() {
   const reduceMotion = useReducedMotion();
   const { siteData } = useLanguage();
+  const groupOrder = ["professional", "university"];
+  const projectGroups = groupOrder
+    .map((groupId) => ({
+      id: groupId,
+      copy: siteData.projectsSection.groups?.[groupId],
+      items: siteData.projects.filter((project) => project.track === groupId)
+    }))
+    .filter((group) => group.copy && group.items.length > 0);
 
   return (
     <section id="projects" className="space-y-5">
@@ -48,117 +56,133 @@ export default function Projects() {
         </p>
       </div>
 
-      <div className="space-y-4">
-        {siteData.projects.map((project, index) => {
-          const demoSrc = project.demo?.src?.trim() || "";
-          const demoPoster = project.demo?.poster?.trim() || "";
-          const demoEmbedUrl = getYouTubeEmbedUrl(demoSrc);
+      <div className="space-y-8">
+        {projectGroups.map((group) => (
+          <div key={group.id} className="space-y-4">
+            <div className="section-shell px-6 py-7 sm:px-8 sm:py-8">
+              <p className="section-tag">{group.copy.eyebrow}</p>
+              <h3 className="section-title mt-4 text-2xl sm:text-[2rem]">
+                {group.copy.title}
+              </h3>
+              <p className="section-copy mt-4 max-w-3xl text-sm leading-7 sm:text-base">
+                {group.copy.description}
+              </p>
+            </div>
 
-          return (
-            <motion.article
-              key={project.title}
-              className="project-card"
-              data-cursor="card"
-              initial={{ opacity: 0, y: 32 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{
-                duration: reduceMotion ? 0 : 0.55,
-                delay: reduceMotion ? 0 : index * 0.08,
-                ease: "easeOut"
-              }}
-              whileHover={reduceMotion ? undefined : { y: -6 }}
-            >
-              <div className="project-layout">
-                <div className="project-main">
-                  <p className="project-category">{project.category}</p>
-                  <h3 className="mt-4 text-3xl font-semibold tracking-tight text-[var(--foreground)] sm:text-[2rem]">
-                    {project.title}
-                  </h3>
-                  <p className="text-muted mt-4 max-w-2xl text-sm leading-7 sm:text-base">
-                    {project.summary}
-                  </p>
+            <div className="space-y-4">
+              {group.items.map((project, index) => {
+                const demoSrc = project.demo?.src?.trim() || "";
+                const demoPoster = project.demo?.poster?.trim() || "";
+                const demoEmbedUrl = getYouTubeEmbedUrl(demoSrc);
 
-                  <ul className="project-list">
-                    {project.highlights.map((highlight) => (
-                      <li key={highlight}>{highlight}</li>
-                    ))}
-                  </ul>
+                return (
+                  <motion.article
+                    key={project.title}
+                    className="project-card"
+                    data-cursor="card"
+                    initial={{ opacity: 0, y: 32 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{
+                      duration: reduceMotion ? 0 : 0.55,
+                      delay: reduceMotion ? 0 : index * 0.08,
+                      ease: "easeOut"
+                    }}
+                    whileHover={reduceMotion ? undefined : { y: -6 }}
+                  >
+                    <div className="project-layout">
+                      <div className="project-main">
+                        <p className="project-category">{project.category}</p>
+                        <h3 className="mt-4 text-3xl font-semibold tracking-tight text-[var(--foreground)] sm:text-[2rem]">
+                          {project.title}
+                        </h3>
+                        <p className="text-muted mt-4 max-w-2xl text-sm leading-7 sm:text-base">
+                          {project.summary}
+                        </p>
 
-                  <div className="mt-6 flex flex-wrap gap-2">
-                    {project.stack.map((item) => (
-                      <span key={item} className="stack-chip">
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+                        <ul className="project-list">
+                          {project.highlights.map((highlight) => (
+                            <li key={highlight}>{highlight}</li>
+                          ))}
+                        </ul>
 
-                <div className={`project-aside ${index % 2 === 1 ? "tilt-card-reverse" : "tilt-card"}`}>
-                  <span className="project-number">{project.id}</span>
-                  <div className="space-y-2">
-                    <p className="fact-label">{siteData.projectsSection.asideLabel}</p>
-                    <p className="text-muted text-sm leading-6">
-                      {siteData.projectsSection.asideDescription}
-                    </p>
-                  </div>
-                </div>
+                        <div className="mt-6 flex flex-wrap gap-2">
+                          {project.stack.map((item) => (
+                            <span key={item} className="stack-chip">
+                              {item}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
 
-                <div className="demo-shell">
-                  <div className="mb-4 flex items-center justify-between gap-3">
-                    <p className="fact-label">{siteData.projectsSection.demoLabel}</p>
-                    {demoSrc ? (
-                      <a
-                        href={demoSrc}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="demo-link focus-ring rounded-full px-3 py-2 text-xs font-medium uppercase tracking-[0.22em]"
-                      >
-                        {siteData.projectsSection.openVideo}
-                      </a>
-                    ) : null}
-                  </div>
+                      <div className={`project-aside ${index % 2 === 1 ? "tilt-card-reverse" : "tilt-card"}`}>
+                        <span className="project-number">{project.id}</span>
+                        <div className="space-y-2">
+                          <p className="fact-label">{siteData.projectsSection.asideLabel}</p>
+                          <p className="text-muted text-sm leading-6">
+                            {siteData.projectsSection.asideDescription}
+                          </p>
+                        </div>
+                      </div>
 
-                  {demoSrc ? (
-                    demoEmbedUrl ? (
-                      <iframe
-                        className="project-video"
-                        data-cursor="media"
-                        src={demoEmbedUrl}
-                        title={`${project.title} demo video`}
-                        loading="lazy"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerPolicy="strict-origin-when-cross-origin"
-                        allowFullScreen
-                      />
-                    ) : (
-                      <video
-                        className="project-video"
-                        data-cursor="media"
-                        controls
-                        playsInline
-                        preload="metadata"
-                        poster={demoPoster || undefined}
-                      >
-                        <source src={demoSrc} type="video/mp4" />
-                        Your browser does not support the video tag.
-                      </video>
-                    )
-                  ) : (
-                    <div className="video-placeholder">
-                      <p className="text-sm font-medium text-[var(--foreground)]">
-                        {siteData.projectsSection.noDemoTitle}
-                      </p>
-                      <p className="text-muted mt-2 text-sm leading-6">
-                        {project.demo?.caption || siteData.projectsSection.noDemoFallback}
-                      </p>
+                      <div className="demo-shell">
+                        <div className="mb-4 flex items-center justify-between gap-3">
+                          <p className="fact-label">{siteData.projectsSection.demoLabel}</p>
+                          {demoSrc ? (
+                            <a
+                              href={demoSrc}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="demo-link focus-ring rounded-full px-3 py-2 text-xs font-medium uppercase tracking-[0.22em]"
+                            >
+                              {siteData.projectsSection.openVideo}
+                            </a>
+                          ) : null}
+                        </div>
+
+                        {demoSrc ? (
+                          demoEmbedUrl ? (
+                            <iframe
+                              className="project-video"
+                              data-cursor="media"
+                              src={demoEmbedUrl}
+                              title={`${project.title} demo video`}
+                              loading="lazy"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                              referrerPolicy="strict-origin-when-cross-origin"
+                              allowFullScreen
+                            />
+                          ) : (
+                            <video
+                              className="project-video"
+                              data-cursor="media"
+                              controls
+                              playsInline
+                              preload="metadata"
+                              poster={demoPoster || undefined}
+                            >
+                              <source src={demoSrc} type="video/mp4" />
+                              Your browser does not support the video tag.
+                            </video>
+                          )
+                        ) : (
+                          <div className="video-placeholder">
+                            <p className="text-sm font-medium text-[var(--foreground)]">
+                              {siteData.projectsSection.noDemoTitle}
+                            </p>
+                            <p className="text-muted mt-2 text-sm leading-6">
+                              {project.demo?.caption || siteData.projectsSection.noDemoFallback}
+                            </p>
+                          </div>
+                        )}
+                      </div>
                     </div>
-                  )}
-                </div>
-              </div>
-            </motion.article>
-          );
-        })}
+                  </motion.article>
+                );
+              })}
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

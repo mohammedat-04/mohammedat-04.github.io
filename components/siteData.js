@@ -263,9 +263,9 @@ const siteContent = {
     experience: [],
     projectsSection: {
       eyebrow: "Featured Work",
-      title: "Selected projects across software, robotics, and embedded systems.",
+      title: "Projects organized by professional work and university work.",
       description:
-        "The goal is not to show everything. It is to show range: interface work, control logic, hardware-aware development, and the ability to move between them.",
+        "This section separates applied engineering work from university-driven builds so the context of each project is immediately clear.",
       demoLabel: "Demo Video",
       openVideo: "Open Video",
       noDemoTitle: "No demo video added yet.",
@@ -273,11 +273,26 @@ const siteContent = {
         "Add a YouTube link or an MP4 file in /public/videos and set demo.src in siteData.js.",
       asideLabel: "Selected Work",
       asideDescription:
-        "Built to demonstrate technical depth while still looking and feeling like a polished product."
+        "Built to demonstrate technical depth while still looking and feeling like a polished product.",
+      groups: {
+        professional: {
+          eyebrow: "Professional Projects",
+          title: "Applied work shaped by research, engineering, and production thinking.",
+          description:
+            "These projects reflect institute work, applied experimentation, or portfolio pieces built with a professional delivery mindset."
+        },
+        university: {
+          eyebrow: "University Projects",
+          title: "Academic builds developed through coursework and technical exploration.",
+          description:
+            "These projects show how university work was turned into polished implementations instead of staying at the assignment level."
+        }
+      }
     },
     projects: [
       {
         id: "01",
+        track: "university",
         title: "Pokemon Battle Simulator",
         category: "Desktop Application",
         summary:
@@ -296,6 +311,7 @@ const siteContent = {
       },
       {
         id: "02",
+        track: "professional",
         title: "Line Follower Robot",
         category: "Robotics Prototype",
         summary:
@@ -314,6 +330,7 @@ const siteContent = {
       },
       {
         id: "03",
+        track: "professional",
         title: "ROS2 Flight Controller",
         category: "Embedded Systems",
         summary:
@@ -668,9 +685,9 @@ const siteContent = {
     experience: [],
     projectsSection: {
       eyebrow: "Ausgewählte Arbeiten",
-      title: "Ausgewählte Projekte aus Software, Robotik und Embedded Systems.",
+      title: "Projekte nach professioneller Arbeit und Uni-Arbeit gegliedert.",
       description:
-        "Es geht nicht darum, alles zu zeigen. Es geht darum, Bandbreite zu zeigen: Interface-Arbeit, Regelungslogik, hardwarenahe Entwicklung und die Fähigkeit, dazwischen zu wechseln.",
+        "Dieser Bereich trennt angewandte Engineering-Arbeit von universitätsgetriebenen Projekten, damit der Kontext jedes Projekts sofort klar ist.",
       demoLabel: "Demo-Video",
       openVideo: "Video öffnen",
       noDemoTitle: "Noch kein Demo-Video hinzugefügt.",
@@ -678,17 +695,32 @@ const siteContent = {
         "Füge einen YouTube-Link oder eine MP4-Datei in /public/videos ein und setze demo.src in siteData.js.",
       asideLabel: "Ausgewählte Arbeit",
       asideDescription:
-        "Gebaut, um technische Tiefe zu zeigen und sich dennoch wie ein ausgereiftes Produkt anzufühlen."
+        "Gebaut, um technische Tiefe zu zeigen und sich dennoch wie ein ausgereiftes Produkt anzufühlen.",
+      groups: {
+        professional: {
+          eyebrow: "Professionelle Projekte",
+          title: "Angewandte Arbeiten mit Forschungs-, Engineering- und Produktfokus.",
+          description:
+            "Diese Projekte spiegeln Institutsarbeit, angewandte Experimente oder Portfoliostücke mit professionellem Lieferanspruch wider."
+        },
+        university: {
+          eyebrow: "Uni-Projekte",
+          title: "Akademische Projekte aus Kursen und technischer Vertiefung.",
+          description:
+            "Diese Projekte zeigen, wie Uni-Arbeit in saubere und ausgereifte Umsetzungen überführt wurde statt auf Aufgaben-Niveau zu bleiben."
+        }
+      }
     },
     projects: [
       {
         id: "01",
+        track: "university",
         title: "Pokemon Battle Simulator",
         category: "Desktop-Anwendung",
         summary:
           "Ein rundenbasierter Simulator zur Erkundung von Spiellogik, UI-Struktur und eines KI-gestützten Gegners für dynamischere Kämpfe.",
         demo: {
-          src: "",
+          src: "https://www.youtube.com/watch?v=Xv1ZVC8SO5M",
           poster: "",
           caption: "Füge einen YouTube-Link oder ein lokales Demo-Video wie /videos/pokemon-demo.mp4 hinzu"
         },
@@ -701,6 +733,7 @@ const siteContent = {
       },
       {
         id: "02",
+        track: "professional",
         title: "Line Follower Robot",
         category: "Robotik-Prototyp",
         summary:
@@ -719,6 +752,7 @@ const siteContent = {
       },
       {
         id: "03",
+        track: "professional",
         title: "ROS2 Flight Controller",
         category: "Embedded Systems",
         summary:
@@ -1073,9 +1107,9 @@ const siteContent = {
     experience: [],
     projectsSection: {
       eyebrow: "Travaux sélectionnés",
-      title: "Projets choisis en logiciel, robotique et systèmes embarqués.",
+      title: "Projets organisés entre travail professionnel et travail universitaire.",
       description:
-        "L'objectif n'est pas de tout montrer. Il s'agit de montrer l'étendue : interfaces, logique de contrôle, développement proche du matériel et capacité à naviguer entre ces domaines.",
+        "Cette section sépare le travail d'ingénierie appliqué des projets issus de l'université afin que le contexte de chaque projet soit immédiatement clair.",
       demoLabel: "Vidéo de démonstration",
       openVideo: "Ouvrir la vidéo",
       noDemoTitle: "Aucune vidéo de démonstration ajoutée pour le moment.",
@@ -1083,17 +1117,32 @@ const siteContent = {
         "Ajoute un lien YouTube ou un fichier MP4 dans /public/videos puis définis demo.src dans siteData.js.",
       asideLabel: "Travail sélectionné",
       asideDescription:
-        "Conçu pour montrer une vraie profondeur technique tout en gardant une sensation de produit abouti."
+        "Conçu pour montrer une vraie profondeur technique tout en gardant une sensation de produit abouti.",
+      groups: {
+        professional: {
+          eyebrow: "Projets professionnels",
+          title: "Travaux appliqués portés par la recherche, l'ingénierie et une logique produit.",
+          description:
+            "Ces projets reflètent un cadre d'institut, des expérimentations appliquées ou des réalisations menées avec un niveau d'exigence professionnel."
+        },
+        university: {
+          eyebrow: "Projets universitaires",
+          title: "Réalisations académiques issues des cours et de l'exploration technique.",
+          description:
+            "Ces projets montrent comment un travail universitaire a été transformé en implémentations solides plutôt qu'en simples devoirs."
+        }
+      }
     },
     projects: [
       {
         id: "01",
+        track: "university",
         title: "Pokemon Battle Simulator",
         category: "Application desktop",
         summary:
           "Un simulateur au tour par tour conçu pour explorer la logique de jeu, la structure d'interface et un adversaire assisté par IA pour des affrontements plus dynamiques.",
         demo: {
-          src: "",
+          src: "https://www.youtube.com/watch?v=Xv1ZVC8SO5M",
           poster: "",
           caption: "Ajoute un lien YouTube ou une vidéo locale comme /videos/pokemon-demo.mp4"
         },
@@ -1106,6 +1155,7 @@ const siteContent = {
       },
       {
         id: "02",
+        track: "professional",
         title: "Line Follower Robot",
         category: "Prototype robotique",
         summary:
@@ -1124,6 +1174,7 @@ const siteContent = {
       },
       {
         id: "03",
+        track: "professional",
         title: "ROS2 Flight Controller",
         category: "Systèmes embarqués",
         summary:
