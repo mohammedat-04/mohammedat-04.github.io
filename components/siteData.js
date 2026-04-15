@@ -272,7 +272,7 @@ const siteContent = {
       openVideo: "Open Video",
       noDemoTitle: "No demo video added yet.",
       noDemoFallback:
-        "Add an MP4 file in /public/videos and set demo.src in siteData.js.",
+        "Add a YouTube link or an MP4 file in /public/videos and set demo.src in siteData.js.",
       asideLabel: "Selected Work",
       asideDescription:
         "Built to demonstrate technical depth while still looking and feeling like a polished product."
@@ -285,9 +285,9 @@ const siteContent = {
         summary:
           "A turn-based simulator built to explore game logic, UI structure, and an AI-assisted opponent that keeps encounters dynamic.",
         demo: {
-          src: "",
+          src: "https://www.youtube.com/watch?v=Xv1ZVC8SO5M",
           poster: "",
-          caption: "Add a local demo video like /videos/pokemon-demo.mp4"
+          caption: "Add a YouTube link or a local demo video like /videos/pokemon-demo.mp4"
         },
         highlights: [
           "Structured battle flow with readable state transitions",
@@ -305,7 +305,7 @@ const siteContent = {
         demo: {
           src: "",
           poster: "",
-          caption: "Add a local demo video like /videos/line-follower-demo.mp4"
+          caption: "Add a YouTube link or a local demo video like /videos/line-follower-demo.mp4"
         },
         highlights: [
           "Sensor-driven navigation and path correction",
@@ -323,7 +323,7 @@ const siteContent = {
         demo: {
           src: "",
           poster: "",
-          caption: "Add a local demo video like /videos/flight-controller-demo.mp4"
+          caption: "Add a YouTube link or a local demo video like /videos/flight-controller-demo.mp4"
         },
         highlights: [
           "IMU integration for motion data",
@@ -677,7 +677,7 @@ const siteContent = {
       openVideo: "Video öffnen",
       noDemoTitle: "Noch kein Demo-Video hinzugefügt.",
       noDemoFallback:
-        "Füge eine MP4-Datei in /public/videos ein und setze demo.src in siteData.js.",
+        "Füge einen YouTube-Link oder eine MP4-Datei in /public/videos ein und setze demo.src in siteData.js.",
       asideLabel: "Ausgewählte Arbeit",
       asideDescription:
         "Gebaut, um technische Tiefe zu zeigen und sich dennoch wie ein ausgereiftes Produkt anzufühlen."
@@ -692,7 +692,7 @@ const siteContent = {
         demo: {
           src: "",
           poster: "",
-          caption: "Füge ein lokales Demo-Video wie /videos/pokemon-demo.mp4 hinzu"
+          caption: "Füge einen YouTube-Link oder ein lokales Demo-Video wie /videos/pokemon-demo.mp4 hinzu"
         },
         highlights: [
           "Strukturierter Battle-Flow mit gut lesbaren Zustandsübergängen",
@@ -710,7 +710,7 @@ const siteContent = {
         demo: {
           src: "",
           poster: "",
-          caption: "Füge ein lokales Demo-Video wie /videos/line-follower-demo.mp4 hinzu"
+          caption: "Füge einen YouTube-Link oder ein lokales Demo-Video wie /videos/line-follower-demo.mp4 hinzu"
         },
         highlights: [
           "Sensorgestützte Navigation und Kurskorrektur",
@@ -728,7 +728,7 @@ const siteContent = {
         demo: {
           src: "",
           poster: "",
-          caption: "Füge ein lokales Demo-Video wie /videos/flight-controller-demo.mp4 hinzu"
+          caption: "Füge einen YouTube-Link oder ein lokales Demo-Video wie /videos/flight-controller-demo.mp4 hinzu"
         },
         highlights: [
           "IMU-Integration für Bewegungsdaten",
@@ -1082,7 +1082,7 @@ const siteContent = {
       openVideo: "Ouvrir la vidéo",
       noDemoTitle: "Aucune vidéo de démonstration ajoutée pour le moment.",
       noDemoFallback:
-        "Ajoute un fichier MP4 dans /public/videos puis définis demo.src dans siteData.js.",
+        "Ajoute un lien YouTube ou un fichier MP4 dans /public/videos puis définis demo.src dans siteData.js.",
       asideLabel: "Travail sélectionné",
       asideDescription:
         "Conçu pour montrer une vraie profondeur technique tout en gardant une sensation de produit abouti."
@@ -1097,7 +1097,7 @@ const siteContent = {
         demo: {
           src: "",
           poster: "",
-          caption: "Ajoute une vidéo locale comme /videos/pokemon-demo.mp4"
+          caption: "Ajoute un lien YouTube ou une vidéo locale comme /videos/pokemon-demo.mp4"
         },
         highlights: [
           "Flux de combat structuré avec transitions d'état lisibles",
@@ -1115,7 +1115,7 @@ const siteContent = {
         demo: {
           src: "",
           poster: "",
-          caption: "Ajoute une vidéo locale comme /videos/line-follower-demo.mp4"
+          caption: "Ajoute un lien YouTube ou une vidéo locale comme /videos/line-follower-demo.mp4"
         },
         highlights: [
           "Navigation pilotée par capteurs et correction de trajectoire",
@@ -1133,7 +1133,7 @@ const siteContent = {
         demo: {
           src: "",
           poster: "",
-          caption: "Ajoute une vidéo locale comme /videos/flight-controller-demo.mp4"
+          caption: "Ajoute un lien YouTube ou une vidéo locale comme /videos/flight-controller-demo.mp4"
         },
         highlights: [
           "Intégration d'une IMU pour les données de mouvement",

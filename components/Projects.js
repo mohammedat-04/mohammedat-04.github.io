@@ -4,6 +4,45 @@ import { withBasePath } from "@/components/assetPath";
 import { motion, useReducedMotion } from "framer-motion";
 import { useLanguage } from "@/components/LanguageProvider";
 
+function getYouTubeEmbedUrl(source) {
+  if (!source) {
+    return "";
+  }
+
+  try {
+    const url = new URL(source);
+    const hostname = url.hostname.toLowerCase();
+
+    if (hostname === "youtu.be") {
+      const videoId = url.pathname.split("/").filter(Boolean)[0];
+      return videoId ? `https://www.youtube.com/embed/${videoId}?rel=0` : "";
+    }
+
+    if (!hostname.endsWith("youtube.com")) {
+      return "";
+    }
+
+    const pathSegments = url.pathname.split("/").filter(Boolean);
+    const videoId =
+      url.searchParams.get("v") ||
+      (pathSegments[0] === "embed" ? pathSegments[1] : "") ||
+      (pathSegments[0] === "shorts" ? pathSegments[1] : "") ||
+      (pathSegments[0] === "live" ? pathSegments[1] : "");
+
+    return videoId ? `https://www.youtube.com/embed/${videoId}?rel=0` : "";
+  } catch {
+    return "";
+  }
+}
+
+function resolveAssetUrl(source) {
+  if (!source) {
+    return "";
+  }
+
+  return /^https?:\/\//i.test(source) ? source : withBasePath(source);
+}
+
 export default function Projects() {
   const reduceMotion = useReducedMotion();
   const { siteData } = useLanguage();
@@ -20,10 +59,9 @@ export default function Projects() {
 
       <div className="space-y-4">
         {siteData.projects.map((project, index) => {
-          const demoSrc = project.demo?.src ? withBasePath(project.demo.src) : "";
-          const demoPoster = project.demo?.poster
-            ? withBasePath(project.demo.poster)
-            : "";
+          const demoSrc = resolveAssetUrl(project.demo?.src?.trim() || "");
+          const demoPoster = resolveAssetUrl(project.demo?.poster?.trim() || "");
+          const demoEmbedUrl = getYouTubeEmbedUrl(project.demo?.src?.trim() || "");
 
           return (
             <motion.article
@@ -67,30 +105,43 @@ export default function Projects() {
                   <div className="demo-shell mt-8">
                     <div className="mb-4 flex items-center justify-between gap-3">
                       <p className="fact-label">{siteData.projectsSection.demoLabel}</p>
-                      {project.demo?.src ? (
-                        <a
-                          href={demoSrc}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="demo-link focus-ring rounded-full px-3 py-2 text-xs font-medium uppercase tracking-[0.22em]"
+                    {demoSrc ? (
+                      <a
+                        href={demoSrc}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="demo-link focus-ring rounded-full px-3 py-2 text-xs font-medium uppercase tracking-[0.22em]"
                         >
                           {siteData.projectsSection.openVideo}
                         </a>
                       ) : null}
                     </div>
 
-                    {project.demo?.src ? (
-                      <video
-                        className="project-video"
-                        data-cursor="media"
-                        controls
-                        playsInline
-                        preload="metadata"
-                        poster={demoPoster || undefined}
-                      >
-                        <source src={demoSrc} type="video/mp4" />
-                        Your browser does not support the video tag.
-                      </video>
+                    {demoSrc ? (
+                      demoEmbedUrl ? (
+                        <iframe
+                          className="project-video"
+                          data-cursor="media"
+                          src={demoEmbedUrl}
+                          title={`${project.title} demo video`}
+                          loading="lazy"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          referrerPolicy="strict-origin-when-cross-origin"
+                          allowFullScreen
+                        />
+                      ) : (
+                        <video
+                          className="project-video"
+                          data-cursor="media"
+                          controls
+                          playsInline
+                          preload="metadata"
+                          poster={demoPoster || undefined}
+                        >
+                          <source src={demoSrc} type="video/mp4" />
+                          Your browser does not support the video tag.
+                        </video>
+                      )
                     ) : (
                       <div className="video-placeholder">
                         <p className="text-sm font-medium text-[var(--foreground)]">
