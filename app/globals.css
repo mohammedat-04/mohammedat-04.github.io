@@ -1104,6 +1104,10 @@ button {
   @apply grid gap-6 lg:grid-cols-[minmax(0,1fr)_200px];
 }
 
+.project-main {
+  min-width: 0;
+}
+
 .project-category {
   color: var(--accent);
   font-family: var(--font-mono), monospace;
@@ -1236,6 +1240,13 @@ button {
 .demo-shell {
   border-top: 1px solid var(--border);
   padding-top: 1.25rem;
+  @apply mt-2;
+}
+
+@media (min-width: 1024px) {
+  .demo-shell {
+    grid-column: 1 / -1;
+  }
 }
 
 .demo-link {
@@ -1262,6 +1273,7 @@ button {
 }
 
 .project-video {
+  display: block;
   aspect-ratio: 16 / 9;
   object-fit: cover;
 }

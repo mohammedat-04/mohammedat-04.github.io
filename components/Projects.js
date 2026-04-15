@@ -70,7 +70,7 @@ export default function Projects() {
               whileHover={reduceMotion ? undefined : { y: -6 }}
             >
               <div className="project-layout">
-                <div>
+                <div className="project-main">
                   <p className="project-category">{project.category}</p>
                   <h3 className="mt-4 text-3xl font-semibold tracking-tight text-[var(--foreground)] sm:text-[2rem]">
                     {project.title}
@@ -92,58 +92,6 @@ export default function Projects() {
                       </span>
                     ))}
                   </div>
-
-                  <div className="demo-shell mt-8">
-                    <div className="mb-4 flex items-center justify-between gap-3">
-                      <p className="fact-label">{siteData.projectsSection.demoLabel}</p>
-                      {demoSrc ? (
-                        <a
-                          href={demoSrc}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="demo-link focus-ring rounded-full px-3 py-2 text-xs font-medium uppercase tracking-[0.22em]"
-                        >
-                          {siteData.projectsSection.openVideo}
-                        </a>
-                      ) : null}
-                    </div>
-
-                    {demoSrc ? (
-                      demoEmbedUrl ? (
-                        <iframe
-                          className="project-video"
-                          data-cursor="media"
-                          src={demoEmbedUrl}
-                          title={`${project.title} demo video`}
-                          loading="lazy"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                          referrerPolicy="strict-origin-when-cross-origin"
-                          allowFullScreen
-                        />
-                      ) : (
-                        <video
-                          className="project-video"
-                          data-cursor="media"
-                          controls
-                          playsInline
-                          preload="metadata"
-                          poster={demoPoster || undefined}
-                        >
-                          <source src={demoSrc} type="video/mp4" />
-                          Your browser does not support the video tag.
-                        </video>
-                      )
-                    ) : (
-                      <div className="video-placeholder">
-                        <p className="text-sm font-medium text-[var(--foreground)]">
-                          {siteData.projectsSection.noDemoTitle}
-                        </p>
-                        <p className="text-muted mt-2 text-sm leading-6">
-                          {project.demo?.caption || siteData.projectsSection.noDemoFallback}
-                        </p>
-                      </div>
-                    )}
-                  </div>
                 </div>
 
                 <div className={`project-aside ${index % 2 === 1 ? "tilt-card-reverse" : "tilt-card"}`}>
@@ -154,6 +102,58 @@ export default function Projects() {
                       {siteData.projectsSection.asideDescription}
                     </p>
                   </div>
+                </div>
+
+                <div className="demo-shell">
+                  <div className="mb-4 flex items-center justify-between gap-3">
+                    <p className="fact-label">{siteData.projectsSection.demoLabel}</p>
+                    {demoSrc ? (
+                      <a
+                        href={demoSrc}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="demo-link focus-ring rounded-full px-3 py-2 text-xs font-medium uppercase tracking-[0.22em]"
+                      >
+                        {siteData.projectsSection.openVideo}
+                      </a>
+                    ) : null}
+                  </div>
+
+                  {demoSrc ? (
+                    demoEmbedUrl ? (
+                      <iframe
+                        className="project-video"
+                        data-cursor="media"
+                        src={demoEmbedUrl}
+                        title={`${project.title} demo video`}
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                      />
+                    ) : (
+                      <video
+                        className="project-video"
+                        data-cursor="media"
+                        controls
+                        playsInline
+                        preload="metadata"
+                        poster={demoPoster || undefined}
+                      >
+                        <source src={demoSrc} type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                    )
+                  ) : (
+                    <div className="video-placeholder">
+                      <p className="text-sm font-medium text-[var(--foreground)]">
+                        {siteData.projectsSection.noDemoTitle}
+                      </p>
+                      <p className="text-muted mt-2 text-sm leading-6">
+                        {project.demo?.caption || siteData.projectsSection.noDemoFallback}
+                      </p>
+                    </div>
+                  )}
                 </div>
               </div>
             </motion.article>
