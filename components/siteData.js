@@ -1,5 +1,3 @@
-import { withBasePath } from "@/components/assetPath";
-
 export const defaultLanguage = "en";
 
 export const languageOptions = [
@@ -55,7 +53,7 @@ const siteContent = {
     education: {
       company: "Leibniz Universität Hannover",
       logo: {
-        src: withBasePath("/logos/luh_logo.svg"),
+        src: "/logos/luh_logo.svg",
         alt: "Leibniz Universität Hannover logo",
         short: "LUH",
         tone: "profile"
@@ -208,7 +206,7 @@ const siteContent = {
         scope: "Assembly technology and industrial robotics",
         company: "Institut für Montagetechnik und Industrierobotik",
         logo: {
-          src: withBasePath("/logos/matchlogo.png"),
+          src: "/logos/matchlogo.png",
           alt: "Institut für Montagetechnik und Industrierobotik logo"
         },
         role: "HiWi / Software Engineer",
@@ -226,7 +224,7 @@ const siteContent = {
         scope: "Measurement and control engineering",
         company: "Institut für Mess- und Regelungstechnik",
         logo: {
-          src: withBasePath("/logos/imrlog.png"),
+          src: "/logos/imrlog.png",
           alt: "Institut für Mess- und Regelungstechnik logo",
           short: "IMR",
           tone: "control"
@@ -246,7 +244,7 @@ const siteContent = {
         scope: "Academic research environment",
         company: "Institut für Algebraische Geometrie",
         logo: {
-          src: withBasePath("/logos/mathlogo.jpg"),
+          src: "/logos/mathlogo.jpg",
           alt: "Institut für Algebraische Geometrie logo",
           short: "IAG",
           tone: "research"
@@ -458,7 +456,7 @@ const siteContent = {
     education: {
       company: "Leibniz Universität Hannover",
       logo: {
-        src: withBasePath("/logos/luh_logo.svg"),
+        src: "/logos/luh_logo.svg",
         alt: "Logo der Leibniz Universität Hannover",
         short: "LUH",
         tone: "profile"
@@ -611,7 +609,7 @@ const siteContent = {
         scope: "Montagetechnik und Industrierobotik",
         company: "Institut für Montagetechnik und Industrierobotik",
         logo: {
-          src: withBasePath("/logos/matchlogo.png"),
+          src: "/logos/matchlogo.png",
           alt: "Logo des Instituts für Montagetechnik und Industrierobotik",
           short: "IMI",
           tone: "robotics"
@@ -631,7 +629,7 @@ const siteContent = {
         scope: "Mess- und Regelungstechnik",
         company: "Institut für Mess- und Regelungstechnik",
         logo: {
-          src: withBasePath("/logos/imrlog.png"),
+          src: "/logos/imrlog.png",
           alt: "Logo des Instituts für Mess- und Regelungstechnik",
           short: "IMR",
           tone: "control"
@@ -651,7 +649,7 @@ const siteContent = {
         scope: "Akademisches Forschungsumfeld",
         company: "Institut für Algebraische Geometrie",
         logo: {
-          src: withBasePath("/logos/mathlogo.jpg"),
+          src: "/logos/mathlogo.jpg",
           alt: "Logo des Instituts für Algebraische Geometrie",
           short: "IAG",
           tone: "research"
@@ -863,7 +861,7 @@ const siteContent = {
     education: {
       company: "Leibniz Universität Hannover",
       logo: {
-        src: withBasePath("/logos/luh_logo.svg"),
+        src: "/logos/luh_logo.svg",
         alt: "Logo de la Leibniz Universität Hannover",
         short: "LUH",
         tone: "profile"
@@ -1016,7 +1014,7 @@ const siteContent = {
         scope: "Montage et robotique industrielle",
         company: "Institut für Montagetechnik und Industrierobotik",
         logo: {
-          src: withBasePath("/logos/matchlogo.png"),
+          src: "/logos/matchlogo.png",
           alt: "Logo de l'Institut für Montagetechnik und Industrierobotik",
           short: "IMI",
           tone: "robotics"
@@ -1036,7 +1034,7 @@ const siteContent = {
         scope: "Mesure et automatique",
         company: "Institut für Mess- und Regelungstechnik",
         logo: {
-          src: withBasePath("/logos/imrlog.png"),
+          src: "/logos/imrlog.png",
           alt: "Logo de l'Institut für Mess- und Regelungstechnik",
           short: "IMR",
           tone: "control"
@@ -1056,7 +1054,7 @@ const siteContent = {
         scope: "Environnement de recherche académique",
         company: "Institut für Algebraische Geometrie",
         logo: {
-          src: withBasePath("/logos/mathlogo.jpg"),
+          src: "/logos/mathlogo.jpg",
           alt: "Logo de l'Institut für Algebraische Geometrie",
           short: "IAG",
           tone: "research"

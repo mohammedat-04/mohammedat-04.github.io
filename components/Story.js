@@ -73,7 +73,7 @@ export default function Story() {
               key={chapter.id}
               className={`story-card ${index === activeIndex ? "story-card-active" : ""}`}
               data-cursor="card"
-              initial={false}
+              initial={{ opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.55 }}
               transition={{

@@ -1,10 +1,8 @@
 import { Fraunces, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import Script from "next/script";
-import { withBasePath } from "@/components/assetPath";
 import LanguageProvider from "@/components/LanguageProvider";
 import {
-  defaultDarkTheme,
-  defaultLightTheme,
+  initialTheme,
   themeAliases,
   validThemes
 } from "@/components/themeOptions";
@@ -34,8 +32,8 @@ export const metadata = {
   description:
     "Portfolio website for Atef Helali, focused on software, robotics, machine learning, and embedded systems.",
   icons: {
-    icon: withBasePath("/brand-icon.svg"),
-    shortcut: withBasePath("/brand-icon.svg")
+    icon: "/brand-icon.svg",
+    shortcut: "/brand-icon.svg"
   }
 };
 
@@ -47,7 +45,6 @@ const themeScript = `
       var validLanguages = ${JSON.stringify(validLanguages)};
       var storedTheme = localStorage.getItem("theme");
       var storedLanguage = localStorage.getItem("language");
-      var systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
       var normalizedTheme =
         validThemes.indexOf(storedTheme) !== -1
           ? storedTheme
@@ -55,9 +52,7 @@ const themeScript = `
       var theme =
         normalizedTheme
           ? normalizedTheme
-          : systemPrefersDark
-            ? "${defaultDarkTheme}"
-            : "${defaultLightTheme}";
+          : "${initialTheme}";
       var language =
         validLanguages.indexOf(storedLanguage) !== -1
           ? storedLanguage
@@ -115,7 +110,7 @@ const themeScript = `
         syncThemeControls(document.documentElement.dataset.theme);
       }
     } catch (error) {
-      document.documentElement.dataset.theme = "${defaultLightTheme}";
+      document.documentElement.dataset.theme = "${initialTheme}";
       document.documentElement.dataset.language = "${defaultLanguage}";
       document.documentElement.lang = "${defaultLanguage}";
     }
@@ -126,6 +121,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang={defaultLanguage}
+      data-theme={initialTheme}
       className="scroll-smooth"
       suppressHydrationWarning
     >

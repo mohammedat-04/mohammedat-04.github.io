@@ -20,7 +20,7 @@ export default function Hero() {
       <div className="space-y-5">
         <motion.p
           className="section-tag"
-          initial={false}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={transition}
         >
@@ -29,7 +29,7 @@ export default function Hero() {
 
         <motion.div
           className="shell-panel profile-stage overflow-hidden px-6 py-8 sm:px-8 sm:py-10"
-          initial={false}
+          initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ ...transition, delay: reduceMotion ? 0 : 0.06 }}
         >
@@ -85,7 +85,7 @@ export default function Hero() {
 
           <motion.div
             className="hero-about mt-8"
-            initial={false}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...transition, delay: reduceMotion ? 0 : 0.28 }}
           >
@@ -95,7 +95,7 @@ export default function Hero() {
 
           <motion.div
             className="mt-8 flex flex-col gap-3 sm:flex-row"
-            initial={false}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...transition, delay: reduceMotion ? 0 : 0.36 }}
           >
@@ -117,7 +117,7 @@ export default function Hero() {
         <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-1">
           <motion.article
             className="shell-panel accent-panel tilt-card p-5"
-            initial={false}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...transition, delay: reduceMotion ? 0 : 0.44 }}
           >
@@ -134,7 +134,7 @@ export default function Hero() {
 
           <motion.article
             className="shell-panel tilt-card-reverse p-5"
-            initial={false}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...transition, delay: reduceMotion ? 0 : 0.5 }}
           >

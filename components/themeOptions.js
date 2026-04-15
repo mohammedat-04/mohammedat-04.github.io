@@ -1,5 +1,6 @@
 export const defaultLightTheme = "light";
 export const defaultDarkTheme = "dark";
+export const initialTheme = "slate";
 
 export const themeOptions = [
   { id: defaultLightTheme, shortLabel: "LT" },

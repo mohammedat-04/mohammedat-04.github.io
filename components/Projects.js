@@ -1,6 +1,5 @@
 "use client";
 
-import { withBasePath } from "@/components/assetPath";
 import { motion, useReducedMotion } from "framer-motion";
 import { useLanguage } from "@/components/LanguageProvider";
 
@@ -35,14 +34,6 @@ function getYouTubeEmbedUrl(source) {
   }
 }
 
-function resolveAssetUrl(source) {
-  if (!source) {
-    return "";
-  }
-
-  return /^https?:\/\//i.test(source) ? source : withBasePath(source);
-}
-
 export default function Projects() {
   const reduceMotion = useReducedMotion();
   const { siteData } = useLanguage();
@@ -59,16 +50,16 @@ export default function Projects() {
 
       <div className="space-y-4">
         {siteData.projects.map((project, index) => {
-          const demoSrc = resolveAssetUrl(project.demo?.src?.trim() || "");
-          const demoPoster = resolveAssetUrl(project.demo?.poster?.trim() || "");
-          const demoEmbedUrl = getYouTubeEmbedUrl(project.demo?.src?.trim() || "");
+          const demoSrc = project.demo?.src?.trim() || "";
+          const demoPoster = project.demo?.poster?.trim() || "";
+          const demoEmbedUrl = getYouTubeEmbedUrl(demoSrc);
 
           return (
             <motion.article
               key={project.title}
               className="project-card"
               data-cursor="card"
-              initial={false}
+              initial={{ opacity: 0, y: 32 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{
@@ -105,12 +96,12 @@ export default function Projects() {
                   <div className="demo-shell mt-8">
                     <div className="mb-4 flex items-center justify-between gap-3">
                       <p className="fact-label">{siteData.projectsSection.demoLabel}</p>
-                    {demoSrc ? (
-                      <a
-                        href={demoSrc}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="demo-link focus-ring rounded-full px-3 py-2 text-xs font-medium uppercase tracking-[0.22em]"
+                      {demoSrc ? (
+                        <a
+                          href={demoSrc}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="demo-link focus-ring rounded-full px-3 py-2 text-xs font-medium uppercase tracking-[0.22em]"
                         >
                           {siteData.projectsSection.openVideo}
                         </a>

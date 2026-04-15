@@ -40,7 +40,7 @@ export default function Experience() {
               key={`${item.company}-${item.role}-${item.period}`}
               className="experience-card experience-card-compact"
               data-cursor="card"
-              initial={false}
+              initial={{ opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{

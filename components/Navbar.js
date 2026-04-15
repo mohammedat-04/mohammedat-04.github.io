@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { withBasePath } from "@/components/assetPath";
 import { motion } from "framer-motion";
 import LanguageToggle from "@/components/LanguageToggle";
 import { useLanguage } from "@/components/LanguageProvider";
@@ -13,7 +12,7 @@ export default function Navbar() {
   return (
     <motion.header
       className="sticky top-4 z-50 px-4 sm:px-6 lg:px-8"
-      initial={false}
+      initial={{ y: -24, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
@@ -26,7 +25,7 @@ export default function Navbar() {
           className="brand-mark focus-ring inline-flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.24em] sm:text-base"
         >
           <Image
-            src={withBasePath("/brand-icon.svg")}
+            src="/brand-icon.svg"
             alt=""
             width={28}
             height={28}

@@ -25,7 +25,7 @@ export default function Profile() {
     <section id="profile">
       <motion.div
         className="section-shell px-6 py-8 sm:px-10 sm:py-10"
-        initial={false}
+        initial={{ opacity: 0, y: 28 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: reduceMotion ? 0 : 0.55, ease: "easeOut" }}
@@ -50,7 +50,7 @@ export default function Profile() {
             <motion.article
               key={strength.title}
               className="info-card strength-card p-5"
-              initial={false}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{
