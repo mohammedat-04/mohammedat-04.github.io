@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "preview:out": "python3 -m http.server 4173 -d out",
     "deploy": "gh-pages -d out"
   },
   "dependencies": {
